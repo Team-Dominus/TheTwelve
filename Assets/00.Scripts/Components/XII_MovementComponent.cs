@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using XII.Characters;
 
@@ -21,13 +22,11 @@ namespace XII.Components
 
         public void Move(Vector2 direction)
         {
-            Rigidbody.MovePosition(Rigidbody.position + direction * MovementData.MoveSpeed * Time.deltaTime); 
+            transform.Translate(direction * MovementData.MoveSpeed * Time.deltaTime, Space.World);
         }
 
         public void Jump()
         {
-            //Vector2 YVelocity = new Vector2(0.0f, transform.position.y);
-            //Rigidbody.AddForce(YVelocity *MovementData.JumpPower, ForceMode2D.Impulse);
             Rigidbody.AddForce(Vector2.up * MovementData.JumpPower, ForceMode2D.Impulse);
         }
     }
