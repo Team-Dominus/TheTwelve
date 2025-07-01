@@ -5,7 +5,7 @@ using UnityEngine;
 
 // 링크 / 담당자
 
-public class XII_BaseCharacter : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     private void Start()
     {
