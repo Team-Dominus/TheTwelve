@@ -9,7 +9,7 @@ namespace XII.Characters
     [RequireComponent(typeof(PlayerInput))]
 
     // Custom Components
-    //[RequireComponent(typeof(XII_BaseCharacter))]
+
 
 
 
