@@ -8,8 +8,17 @@ using XII.Components;
 
 namespace XII.Characters
 {
+    // Unity Components
     [RequireComponent(typeof(Rigidbody2D))]
+
+    // Custom Components
+    [RequireComponent(typeof(XII_StatComponent))]
     [RequireComponent(typeof(XII_MovementComponent))]
+    [RequireComponent(typeof(XII_StateComponent))]
+    [RequireComponent(typeof(XII_HealthComponent))]
+    [RequireComponent(typeof(XII_StaminaComponent))]
+    [RequireComponent(typeof(XII_SkillComponent))]
+    [RequireComponent(typeof(XII_CombatComponent))]
 
     public class XII_BaseCharacter : MonoBehaviour
     {

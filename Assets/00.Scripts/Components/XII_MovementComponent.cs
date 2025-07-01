@@ -13,17 +13,17 @@ namespace XII.Components
 {
     public class XII_MovementComponent : MonoBehaviour
     {
-        [Header("##Setting")]
-        [SerializeField] XII_MovementeData MovementData;
+        private XII_MovementData MovementData;
 
-        Vector2 DashDirection = Vector2.right;
-        bool bDashing = false; 
+        private Vector2 DashDirection = Vector2.right;
+        private bool bDashing = false;
 
-        Rigidbody2D Rigidbody;
+        private Rigidbody2D Rigidbody;
 
         private void Awake()
         {
-            Rigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody    = GetComponent<Rigidbody2D>();
+            MovementData = GetComponent<XII_StatComponent>().MovementData;
         }
 
         public void Move(Vector2 direction)
