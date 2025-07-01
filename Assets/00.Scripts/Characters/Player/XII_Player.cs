@@ -15,6 +15,7 @@ namespace XII.Characters
 
     public class XII_Player : XII_BaseCharacter
     {
+
         protected override void Awake()
         {
             base.Awake();
@@ -36,13 +37,19 @@ namespace XII.Characters
             if (movementAction != null)
             {
                 movementAction.performed += ctx => { Direction = ctx.ReadValue<Vector2>(); };
-                movementAction.canceled += ctx => { Direction = Vector2.zero; };
+                movementAction.canceled += ctx  => { Direction = Vector2.zero; };
             }
 
             InputAction jumpAction = actionMap.FindAction("Jump");
             if (jumpAction != null)
             {
                 jumpAction.started += ctx => { MovementComponent.Jump(); };
+            }
+
+            InputAction dashAction = actionMap.FindAction("Dash");
+            if (dashAction != null)
+            {
+                dashAction.started += ctx => { MovementComponent.Dash(); };
             }
         }
     }

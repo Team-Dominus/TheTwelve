@@ -7,5 +7,6 @@ public class XII_MovementeData : ScriptableObject
 {
     public float MoveSpeed;
     public float JumpPower;
-
+    public float DashPower;
+    public float DashDistance;
 }
