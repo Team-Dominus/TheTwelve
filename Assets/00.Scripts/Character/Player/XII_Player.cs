@@ -11,8 +11,6 @@ namespace XII.Characters
     // Custom Components
 
 
-
-
     public class XII_Player : XII_BaseCharacter
     {
         [Header("##Setting")]
@@ -45,8 +43,6 @@ namespace XII.Characters
         {
             transform.Translate(Direction.x * Time.deltaTime * moveSpeed, Direction.y * Time.deltaTime * moveSpeed, 0.0f);
         }
-
-
     }
 
 }
