@@ -22,7 +22,7 @@ MonoBehaviour:
     Hp: 0
     Def: 0
   StaminaData:
-    MaxStamina: 0
+    MaxStamina: 50
     Stamina: 0
   CombatData:
     Atk: 0

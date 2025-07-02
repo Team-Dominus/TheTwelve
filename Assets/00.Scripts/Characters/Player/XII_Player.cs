@@ -58,18 +58,20 @@ namespace XII.Characters
             }
 
 
-			//디버그 - 체력 회복
+			//디버그 - 체력 회복 / 스태미나 증가
 			InputAction debugPlus = actionMap.FindAction("DebugPlus");
 			if (debugPlus != null)
 			{
-				debugPlus.started += ctx => { HealthComponent.RecoverDamage(10); };
+				debugPlus.started += ctx => { StaminaComponent.IncreaseStamina(10); };
+				//debugPlus.started += ctx => { HealthComponent.RecoverDamage(10); };
 			}
 
-			//디버그 - 체력 감소
+			//디버그 - 체력 감소 / 스태미나 감소
 			InputAction debugMinus = actionMap.FindAction("DebugMinus");
 			if (debugMinus != null)
 			{
-				debugMinus.started += ctx => { HealthComponent.TakeDamage(10); };
+				debugMinus.started += ctx => { StaminaComponent.DecreaseStamina(10); };
+				//debugMinus.started += ctx => { HealthComponent.TakeDamage(10); };
 			}
 		}
 
@@ -78,6 +80,12 @@ namespace XII.Characters
 			//여기에 UI 연결하면 될듯함
 			//Debug.Log(health / maxHealth);
 		}
-    }
+
+		protected override void OnStaminaChanged(float stamina, float maxStamina)
+		{
+			//여기에 UI 연결하면 될듯함
+			//Debug.Log(stamina / maxStamina);
+		}
+	}
 }
 

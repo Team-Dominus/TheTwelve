@@ -25,23 +25,31 @@ namespace XII.Characters
         protected Vector2 Direction;
         protected XII_MovementComponent MovementComponent;
 		protected XII_HealthComponent HealthComponent;
+		protected XII_StaminaComponent StaminaComponent;
         
         protected virtual void Awake()
         {
             MovementComponent = GetComponent<XII_MovementComponent>();
 			HealthComponent = GetComponent<XII_HealthComponent>();
+			StaminaComponent = GetComponent <XII_StaminaComponent>();
         }
 
 		protected virtual void Start()
 		{
 			XII_HealthComponent.OnHealthChanged += OnHealthChanged;
+			XII_StaminaComponent.OnStaminaChanged += OnStaminaChanged;
 		}
 
 		protected virtual void OnHealthChanged(float health, float maxHealth)
 		{
 
 		}
-    }
+
+		protected virtual void OnStaminaChanged(float stamina, float maxStamina)
+		{
+
+		}
+	}
 }
 
 
