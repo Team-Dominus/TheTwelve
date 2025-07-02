@@ -8,7 +8,7 @@ namespace XII.Components
 {
     public class XII_HealthComponent : MonoBehaviour
     {
-		public static XII_HealthChangeDelegate OnHealthChanged;
+		public XII_HealthChangeDelegate OnHealthChanged;
 
         private XII_HealthData HealthData;
         private void Awake()
