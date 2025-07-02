@@ -18,7 +18,7 @@ MonoBehaviour:
     DashPower: 300
     DashDistance: 3
   HealthData:
-    MaxHp: 0
+    MaxHp: 100
     Hp: 0
     Def: 0
   StaminaData:
