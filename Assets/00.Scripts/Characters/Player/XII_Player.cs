@@ -73,19 +73,29 @@ namespace XII.Characters
 				debugMinus.started += ctx => { StaminaComponent.DecreaseStamina(10); };
 				//debugMinus.started += ctx => { HealthComponent.TakeDamage(10); };
 			}
-		}
+
+            //디버그 - State 변경
+            InputAction debugState = actionMap.FindAction("DebugState");
+            if(debugState != null)
+            {
+                debugState.started += ctx => { StateComponent.StateChanged(EState.Die); };
+
+                //Send State : Boss.StateComponent.StateChanged(EState.Hit); ->
+            }
+        }
 
 		protected override void OnHealthChanged(float health, float maxHealth)
 		{
 			//여기에 UI 연결하면 될듯함
-			//Debug.Log(health / maxHealth);
+			Debug.Log(health / maxHealth);
 		}
 
 		protected override void OnStaminaChanged(float stamina, float maxStamina)
 		{
 			//여기에 UI 연결하면 될듯함
-			//Debug.Log(stamina / maxStamina);
+			Debug.Log(stamina / maxStamina);
 		}
-	}
+
+    }
 }
 

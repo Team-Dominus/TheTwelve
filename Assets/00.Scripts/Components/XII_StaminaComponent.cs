@@ -8,7 +8,7 @@ namespace XII.Components
 {
     public class XII_StaminaComponent : MonoBehaviour
     {
-		public static XII_StaminaChangeDelegate OnStaminaChanged;
+		public XII_StaminaChangeDelegate OnStaminaChanged;
 
 		private XII_StaminaData StaminaData;
         private void Awake()
