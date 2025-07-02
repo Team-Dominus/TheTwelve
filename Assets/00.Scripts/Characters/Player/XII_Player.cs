@@ -23,7 +23,12 @@ namespace XII.Characters
             InputSettings();
         }
 
-        private void Update()
+		protected override void Start()
+		{
+			base.Start();
+		}
+
+		private void Update()
         {
             MovementComponent.Move(Direction);
         }
@@ -51,7 +56,28 @@ namespace XII.Characters
             {
                 dashAction.started += ctx => { MovementComponent.Dash(); };
             }
-        }
+
+
+			//디버그 - 체력 회복
+			InputAction debugPlus = actionMap.FindAction("DebugPlus");
+			if (debugPlus != null)
+			{
+				debugPlus.started += ctx => { HealthComponent.RecoverDamage(10); };
+			}
+
+			//디버그 - 체력 감소
+			InputAction debugMinus = actionMap.FindAction("DebugMinus");
+			if (debugMinus != null)
+			{
+				debugMinus.started += ctx => { HealthComponent.TakeDamage(10); };
+			}
+		}
+
+		protected override void OnHealthChanged(float health, float maxHealth)
+		{
+			//여기에 UI 연결하면 될듯함
+			//Debug.Log(health / maxHealth);
+		}
     }
 }
 
