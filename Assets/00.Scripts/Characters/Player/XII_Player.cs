@@ -57,9 +57,14 @@ namespace XII.Characters
                 dashAction.started += ctx => { MovementComponent.Dash(); };
             }
 
+            InputAction attackAction = actionMap.FindAction("Attack");
+            if (attackAction != null)
+            {
+                attackAction.started += ctx => { BaseAttackComponent.Attack(); };
+            }
 
-			//디버그 - 체력 회복 / 스태미나 증가
-			InputAction debugPlus = actionMap.FindAction("DebugPlus");
+            //디버그 - 체력 회복 / 스태미나 증가
+            InputAction debugPlus = actionMap.FindAction("DebugPlus");
 			if (debugPlus != null)
 			{
 				debugPlus.started += ctx => { StaminaComponent.IncreaseStamina(10); };

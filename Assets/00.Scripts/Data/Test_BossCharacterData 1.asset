@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29e7e8677746586448f4badb94d53067, type: 3}
-  m_Name: CatCharacterData
+  m_Name: Test_BossCharacterData 1
   m_EditorClassIdentifier: 
   MovementData:
     MoveSpeed: 3

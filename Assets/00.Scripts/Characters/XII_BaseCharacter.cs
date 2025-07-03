@@ -6,6 +6,10 @@ using XII.Components;
 
 // 링크 / 담당자
 
+// Moveable Character
+
+
+
 namespace XII.Characters
 {
     // Unity Components
@@ -19,6 +23,8 @@ namespace XII.Characters
     [RequireComponent(typeof(XII_StaminaComponent))]
     [RequireComponent(typeof(XII_SkillComponent))]
     [RequireComponent(typeof(XII_CombatComponent))]
+    [RequireComponent(typeof(XII_BaseAttackComponent))]
+
 
     public class XII_BaseCharacter : MonoBehaviour
     {
@@ -26,14 +32,18 @@ namespace XII.Characters
         protected XII_MovementComponent MovementComponent;
         protected XII_HealthComponent HealthComponent;
         protected XII_StaminaComponent StaminaComponent;
-        protected XII_StateComponent StateComponent; // Add a reference to XII_StateComponent
+        protected XII_StateComponent StateComponent; 
+        protected XII_BaseAttackComponent BaseAttackComponent;
+        protected XII_CombatComponent CombatComponent;
 
         protected virtual void Awake()
         {
             MovementComponent = GetComponent<XII_MovementComponent>();
             HealthComponent = GetComponent<XII_HealthComponent>();
             StaminaComponent = GetComponent<XII_StaminaComponent>();
-            StateComponent = GetComponent<XII_StateComponent>(); // Initialize the StateComponent
+            StateComponent = GetComponent<XII_StateComponent>();
+            BaseAttackComponent = GetComponent<XII_BaseAttackComponent>();
+            CombatComponent = GetComponent<XII_CombatComponent>();
         }
 
         protected virtual void Start()
@@ -45,7 +55,7 @@ namespace XII.Characters
                 StaminaComponent.OnStaminaChanged += OnStaminaChanged;
 
             if (StateComponent != null)
-                StateComponent.OnStateChanged += OnStateChanged; // Use the instance of StateComponent
+                StateComponent.OnStateChanged += OnStateChanged;
         }
 
         protected virtual void OnHealthChanged(float health, float maxHealth)
