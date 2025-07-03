@@ -16,7 +16,12 @@ namespace XII.Components
             HealthData = GetComponent<XII_StatComponent>().HealthData;
         }
 
-		public void TakeDamage(float amount)
+        private void Start()
+        {
+            HealthData.Hp = HealthData.MaxHp;
+        }
+
+        public void TakeDamage(float amount)
 		{
 			HealthData.Hp -= amount;
 

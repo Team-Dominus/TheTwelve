@@ -29,7 +29,7 @@ namespace XII.Components
         public void SendDamage(Collider2D target)
         {
             Debug.Log("Send Damage to: " + target.gameObject.name);
-            target.GetComponent<XII_HealthComponent>().TakeDamage(CombatData.Atk);
+            target.GetComponent<XII_IDamageable>().Damage(this.gameObject, CombatData.Atk);
 
         }
 

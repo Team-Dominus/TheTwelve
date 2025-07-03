@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ±âº» °ø°İÀÇ ÇàÀ§¸¦ À§ÇÑ ÄÄÆ÷³ÍÆ®
+// ê¸°ë³¸ ê³µê²©ì˜ í–‰ìœ„ë¥¼ ìœ„í•œ ì»´í¬ë„ŒíŠ¸
 
 namespace XII.Components
 {
@@ -26,8 +26,8 @@ namespace XII.Components
                 {
                     Debug.Log("Hit Enemy: " + collider.gameObject.name);
                     this.gameObject.GetComponent<XII_CombatComponent>().SendDamage(collider);
-                    // ¿©±â¿¡ Àû¿¡°Ô µ¥¹ÌÁö¸¦ ÁÖ´Â ·ÎÁ÷À» Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù.
-                    // ¿¹: collider.GetComponent<Enemy>().TakeDamage(damageAmount);
+                    // ì—¬ê¸°ì— ì ì—ê²Œ ë°ë¯¸ì§€ë¥¼ ì£¼ëŠ” ë¡œì§ì„ ì¶”ê°€í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+                    // ì˜ˆ: collider.GetComponent<Enemy>().TakeDamage(damageAmount);
                 }
             }
         }

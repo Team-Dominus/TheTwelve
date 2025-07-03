@@ -19,11 +19,11 @@ MonoBehaviour:
     DashDistance: 2
   HealthData:
     MaxHp: 100
-    Hp: 0
+    Hp: 100
     Def: 0
   StaminaData:
     MaxStamina: 50
     Stamina: 40
   CombatData:
-    Atk: 0
+    Atk: 10
     AtkSpeed: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 using XII.Components;
 
 
-// ¸µÅ© / ´ã´çÀÚ
+// ë§í¬ / ë‹´ë‹¹ì
 
 // Moveable Character
 
@@ -26,7 +26,7 @@ namespace XII.Characters
     [RequireComponent(typeof(XII_BaseAttackComponent))]
 
 
-    public class XII_BaseCharacter : MonoBehaviour
+    public class XII_BaseCharacter : MonoBehaviour, XII_IDamageable
     {
         protected Vector2 Direction;
         protected XII_MovementComponent MovementComponent;
@@ -69,6 +69,15 @@ namespace XII.Characters
         protected virtual void OnStateChanged(EState state)
         {
             // Override this method in derived classes to handle state changes
+        }
+
+        public void Damage(GameObject attacker, float damage)
+        {
+            //ê³µê²©ì
+            Debug.Log(attacker);
+
+            if (attacker != null)
+                HealthComponent.TakeDamage(damage);
         }
     }
 }

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface XII_IDamageable
 {
-	void Damage(GameObject attacker);//±¸Á¶Ã¼µµ ¹Ş¾Æ¿Í¾ß ÇÔ
+	void Damage(GameObject attacker, float damage);//êµ¬ì¡°ì²´ë„ ë°›ì•„ì™€ì•¼ í•¨
 }
