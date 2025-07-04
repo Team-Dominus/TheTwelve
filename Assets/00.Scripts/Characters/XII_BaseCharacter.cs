@@ -53,9 +53,6 @@ namespace XII.Characters
 
             if (StaminaComponent != null)
                 StaminaComponent.OnStaminaChanged += OnStaminaChanged;
-
-            if (StateComponent != null)
-                StateComponent.OnStateChanged += OnStateChanged;
         }
 
         protected virtual void OnHealthChanged(float health, float maxHealth)
@@ -71,13 +68,13 @@ namespace XII.Characters
             // Override this method in derived classes to handle state changes
         }
 
-        public void Damage(GameObject attacker, float damage)
+        public void TakeDamage(GameObject attacker, float damage)
         {
             //공격자
             Debug.Log(attacker);
 
             if (attacker != null)
-                HealthComponent.TakeDamage(damage);
+                HealthComponent.ReceiveDamage(damage);
         }
     }
 }

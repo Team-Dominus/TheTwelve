@@ -13,8 +13,7 @@ public enum EState
     Die
 }
 
-// Stateø° µ˚∏• µ®∏Æ∞‘¿Ã∆Æ
-public delegate void XII_StateChangedDelegate(EState state);
+// StateÏóê Îî∞Î•∏ Îç∏Î¶¨Í≤åÏù¥Ìä∏
 public delegate void XII_IdleDelegate();
 public delegate void XII_RunDelegate();
 public delegate void XII_DashDelegate();
@@ -29,17 +28,17 @@ namespace XII.Components
     {
         public EState CurrentState;
 
-        public XII_StateChangedDelegate OnStateChanged;
-
         public bool isDead = false;
 
-        public XII_IdleDelegate OnIdle;
-        public XII_RunDelegate OnRun;
-        public XII_DashDelegate OnDash;
-        public XII_JumpDelegate OnJump;
-        public XII_AttackDelegate OnAttack;
-        public XII_HitDelegate OnHit;
-        public XII_DieDelegate OnDie;
+        public XII_IdleDelegate     OnIdle;
+        public XII_RunDelegate      OnRun;
+        public XII_DashDelegate     OnDash;
+        public XII_JumpDelegate     OnJump;
+        public XII_AttackDelegate   OnAttack;
+        public XII_HitDelegate      OnHit;
+        public XII_DieDelegate      OnDie;
+
+        //----------------------------------------------------------------
 
         public void StateChanged(EState newState)
         {

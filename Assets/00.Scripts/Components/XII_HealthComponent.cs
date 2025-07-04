@@ -21,7 +21,7 @@ namespace XII.Components
             HealthData.Hp = HealthData.MaxHp;
         }
 
-        public void TakeDamage(float amount)
+        public void ReceiveDamage(float amount)
 		{
 			HealthData.Hp -= amount;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void XII_StaminaChangeDelegate(float health, float maxHealth);
+public delegate void XII_StaminaChangeDelegate(float stamina, float maxStamina);
 
 namespace XII.Components
 {
