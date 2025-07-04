@@ -299,12 +299,12 @@ GameObject:
   - component: {fileID: 272146084}
   - component: {fileID: 272146086}
   - component: {fileID: 272146087}
-  - component: {fileID: 272146093}
-  - component: {fileID: 272146092}
   - component: {fileID: 272146091}
   - component: {fileID: 272146090}
-  - component: {fileID: 272146089}
   - component: {fileID: 272146088}
+  - component: {fileID: 272146093}
+  - component: {fileID: 272146092}
+  - component: {fileID: 272146089}
   - component: {fileID: 272146094}
   m_Layer: 0
   m_Name: Player
@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71f7a573af5d4d4284bcffbc4a68bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementData: {fileID: 11400000, guid: c6e14b0ea48ed184fa7b74764fc8dd0e, type: 2}
 --- !u!114 &272146088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebd7271cc1652b4dbb85d684cdaea37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombatData: {fileID: 11400000, guid: 95fad33fd1873d14db5e8cbb13ce1739, type: 2}
 --- !u!114 &272146089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f59420a575ef1143bb9cc66f1e692d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaData: {fileID: 11400000, guid: a06021a2f367b064086cf68333c64c4a, type: 2}
 --- !u!114 &272146091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbd2ac4d52b61d49ae4dd7517286d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthData: {fileID: 11400000, guid: 27035f4d84e77c044b705586292c3f18, type: 2}
 --- !u!114 &272146092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c6ab53e1c3a4c41bdadcd50fe2632c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacterData: {fileID: 11400000, guid: 37948fe6c4072204ab35c59d520ffb58, type: 2}
 --- !u!114 &272146094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,11 +952,11 @@ GameObject:
   - component: {fileID: 1780883809}
   - component: {fileID: 1780883808}
   - component: {fileID: 1780883807}
-  - component: {fileID: 1780883806}
   - component: {fileID: 1780883805}
   - component: {fileID: 1780883804}
-  - component: {fileID: 1780883803}
   - component: {fileID: 1780883802}
+  - component: {fileID: 1780883806}
+  - component: {fileID: 1780883803}
   - component: {fileID: 1780883801}
   - component: {fileID: 1780883812}
   m_Layer: 0
@@ -987,6 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebd7271cc1652b4dbb85d684cdaea37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombatData: {fileID: 11400000, guid: ecce4ada956a21c41a1319b678f74157, type: 2}
 --- !u!114 &1780883803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,6 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f59420a575ef1143bb9cc66f1e692d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaData: {fileID: 11400000, guid: 4595da266e6598f438300c377e3c59a4, type: 2}
 --- !u!114 &1780883805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbd2ac4d52b61d49ae4dd7517286d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthData: {fileID: 11400000, guid: 6a7b86e2c89aa7b48b37594b14f431fa, type: 2}
 --- !u!114 &1780883806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,6 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71f7a573af5d4d4284bcffbc4a68bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementData: {fileID: 11400000, guid: 511e452b22acfe0408134b01d1780d90, type: 2}
 --- !u!114 &1780883808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c6ab53e1c3a4c41bdadcd50fe2632c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacterData: {fileID: 11400000, guid: 6a5f303ec90af1744a0fb61abc7ad093, type: 2}
 --- !u!50 &1780883809
 Rigidbody2D:
   serializedVersion: 4

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XII.Data;
 
 public delegate void XII_HealthChangeDelegate(float health, float maxHealth);
 
@@ -8,12 +9,13 @@ namespace XII.Components
 {
     public class XII_HealthComponent : MonoBehaviour
     {
-		public XII_HealthChangeDelegate OnHealthChanged;
+        [SerializeField] private XII_HealthData HealthData;
 
-        private XII_HealthData HealthData;
+        public XII_HealthChangeDelegate OnHealthChanged;
+
         private void Awake()
         {
-            HealthData = GetComponent<XII_StatComponent>().HealthData;
+            //HealthData = GetComponent<XII_StatComponent>().HealthData;
         }
 
         private void Start()

@@ -6,13 +6,13 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.Rendering;
 using UnityEngine;
 using XII.Characters;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
-
+using XII.Data;
 
 namespace XII.Components
 {
     public class XII_MovementComponent : MonoBehaviour
     {
+        [SerializeField]
         private XII_MovementData MovementData;
 
         private Vector2 DashDirection = Vector2.right;
@@ -23,7 +23,7 @@ namespace XII.Components
         private void Awake()
         {
             Rigidbody    = GetComponent<Rigidbody2D>();
-            MovementData = GetComponent<XII_StatComponent>().MovementData;
+            //MovementData = GetComponent<XII_StatComponent>().MovementData;
         }
 
         public void Move(Vector2 direction)

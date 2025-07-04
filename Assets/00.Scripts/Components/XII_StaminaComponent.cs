@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XII.Data;
 
 public delegate void XII_StaminaChangeDelegate(float stamina, float maxStamina);
 
@@ -8,34 +9,38 @@ namespace XII.Components
 {
     public class XII_StaminaComponent : MonoBehaviour
     {
-		public XII_StaminaChangeDelegate OnStaminaChanged;
+        [SerializeField]
+        private XII_StaminaData staminaData;
 
-		private XII_StaminaData StaminaData;
+        public XII_StaminaData StaminaData => staminaData;
+
+        public XII_StaminaChangeDelegate OnStaminaChanged;
+
         private void Awake()
         {
-            StaminaData = GetComponent<XII_StatComponent>().StaminaData;
+            //StaminaData = GetComponent<XII_StatComponent>().StaminaData;
         }
 
 		public void DecreaseStamina(float amount)
 		{
-			StaminaData.Stamina -= amount;
+			staminaData.Stamina -= amount;
 
-			StaminaData.Stamina = Mathf.Clamp(StaminaData.Stamina, 0, StaminaData.MaxStamina);
+			staminaData.Stamina = Mathf.Clamp(staminaData.Stamina, 0, staminaData.MaxStamina);
 
 			//Debug.Log(StaminaData.Stamina);
 
-			OnStaminaChanged?.Invoke(StaminaData.Stamina, StaminaData.MaxStamina);
+			OnStaminaChanged?.Invoke(staminaData.Stamina, staminaData.MaxStamina);
 		}
 
 		public void IncreaseStamina(float amount)
 		{
-			StaminaData.Stamina += amount;
+			staminaData.Stamina += amount;
 
-			StaminaData.Stamina = Mathf.Clamp(StaminaData.Stamina, 0, StaminaData.MaxStamina);
+			staminaData.Stamina = Mathf.Clamp(staminaData.Stamina, 0, staminaData.MaxStamina);
 
 			//Debug.Log(StaminaData.Stamina);
 
-			OnStaminaChanged?.Invoke(StaminaData.Stamina, StaminaData.MaxStamina);
+			OnStaminaChanged?.Invoke(staminaData.Stamina, staminaData.MaxStamina);
 		}
 	}
 }
